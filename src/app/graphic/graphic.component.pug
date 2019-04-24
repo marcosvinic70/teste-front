@@ -1,0 +1,35 @@
+
+.card
+	.card-body.d-flex.justify-content-center
+		jqxChart([width]="1400", [height]="800",
+				[title]="'Fitness & exercise weekly scorecard'",
+				[description]="'Time spent in vigorous exercise'",
+				[showLegend]="true", [enableAnimations]="true", [padding]="padding",
+				[titlePadding]="titlePadding", [source]="sampleData", [xAxis]="xAxis",
+				[seriesGroups]="seriesGroups", [colorScheme]="'scheme01'")
+.card.mt-5
+	.card-body
+		table.table.table-hover.table-striped
+			thead
+				tr
+					th(scope='col') #
+					th(scope='col') First
+					th(scope='col') Last
+					th(scope='col') Handle
+			tbody
+				tr
+					th(scope='row') 1
+					td Mark
+					td Otto
+					td @mdo
+				tr
+					th(scope='row') 2
+					td Jacob
+					td Thornton
+					td @fat
+				tr
+					th(scope='row') 3
+					td Larry
+					td the Bird
+					td @twitter
+

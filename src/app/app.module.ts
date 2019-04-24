@@ -5,16 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
+import { GraphicComponent } from './graphic/graphic.component';
+import { jqxChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxchart';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		HeaderComponent,
-		SideNavComponent
+		SideNavComponent,
+		GraphicComponent,
+		jqxChartComponent,
 	],
 	imports: [
 		BrowserModule,
-		AppRoutingModule
+		AppRoutingModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent]

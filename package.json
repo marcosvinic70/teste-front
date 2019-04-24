@@ -22,6 +22,8 @@
     "@angular/router": "~7.2.0",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
+    "highcharts": "^7.1.1",
+    "highcharts-angular": "^2.4.0",
     "jquery": "^3.4.0",
     "jqwidgets-scripts": "^7.2.0",
     "ng-cli-pug-loader": "^0.1.7",

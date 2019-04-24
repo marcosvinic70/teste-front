@@ -1,12 +1,16 @@
 
 .card
-	.card-body.d-flex.justify-content-center
-		jqxChart([width]="1400", [height]="800",
-				[title]="'Fitness & exercise weekly scorecard'",
-				[description]="'Time spent in vigorous exercise'",
-				[showLegend]="true", [enableAnimations]="true", [padding]="padding",
-				[titlePadding]="titlePadding", [source]="sampleData", [xAxis]="xAxis",
-				[seriesGroups]="seriesGroups", [colorScheme]="'scheme01'")
+	.card-body
+		highcharts-chart([Highcharts]="Highcharts",
+			[options]="chartOptions",
+			style="width: 100%; height: 400px; display: block;")
+
+		//- jqxChart([width]="1400", [height]="800",
+		//- 		[title]="'Fitness & exercise weekly scorecard'",
+		//- 		[description]="'Time spent in vigorous exercise'",
+		//- 		[showLegend]="true", [enableAnimations]="true", [padding]="padding",
+		//- 		[titlePadding]="titlePadding", [source]="sampleData", [xAxis]="xAxis",
+		//- 		[seriesGroups]="seriesGroups", [colorScheme]="'scheme01'")
 .card.mt-5
 	.card-body
 		table.table.table-hover.table-striped

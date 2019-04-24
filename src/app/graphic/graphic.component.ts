@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as Highcharts from 'highcharts';
 
 @Component({
 	selector: 'app-graphic',
@@ -6,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./graphic.component.scss']
 })
 export class GraphicComponent implements OnInit {
+
+	Highcharts = Highcharts;
+	chartOptions = {
+		series: [{
+		data: [1, 2, 3]
+		}]
+	};
 
 	sampleData: any[] = [
 		{ Day: 'Monday', Keith: 30, Erica: 15, George: 25 },

@@ -60,9 +60,6 @@ export class GraphicComponent implements OnInit {
 			},
 			xAxis: {
 				type: 'category',
-				title: {
-					text: 'Datas'
-				}
 			},
 			tooltip: {
 				valueSuffix:" (Capacidade - Atendimento Realizado)"

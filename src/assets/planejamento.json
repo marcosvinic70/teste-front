@@ -38,6 +38,45 @@
 		"atendimentoPlanejado": 30,
 		"atendimentoRealizado": 10,
 		"desvio": 20
+	},
+	{
+		"data": "05/08/2002",
+		"demanda": 15,
+		"capacidade": 45,
+		"atendimentoPlanejado": 50,
+		"atendimentoRealizado": 15,
+		"desvio": 0
+	},
+	{
+		"data": "11/11/2003",
+		"demanda": 80,
+		"capacidade": 35,
+		"atendimentoPlanejado": 30,
+		"atendimentoRealizado": 30,
+		"desvio": 50
+	},
+	{
+		"data": "15/01/2005",
+		"demanda": 90,
+		"capacidade": 40,
+		"atendimentoPlanejado": 40,
+		"atendimentoRealizado": 25,
+		"desvio": 15
+	},
+	{
+		"data": "19/09/2008",
+		"demanda": 55,
+		"capacidade": 50,
+		"atendimentoPlanejado": 50,
+		"atendimentoRealizado": 30,
+		"desvio": 20
+	},
+	{
+		"data": "20/12/2011",
+		"demanda": 50,
+		"capacidade": 43,
+		"atendimentoPlanejado": 40,
+		"atendimentoRealizado": 35,
+		"desvio": 8
 	}
-
 ]

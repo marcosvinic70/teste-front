@@ -1,16 +1,16 @@
 
-.card
+.card#highcharts
 	.card-body
 		highcharts-chart([Highcharts]="Highcharts",
 			[options]="chartOptions",
 			style="width: 100%; height: 600px; display: block;",
 			*ngIf="canLoad")
 
-.card.mt-5
+.card
 	.card-body
-		table.table.table-hover.table-striped#datatable
+		table.table.table-hover.table-striped
 			thead
-				tr
+				tr.text-center
 					th Data
 					th Demanda
 					th Capacidade
@@ -18,11 +18,29 @@
 					th Atendimento realizado
 					th Desvio
 			tbody
-				tr(*ngFor="let planejamento of planejamentos")
+				tr.text-center(*ngFor="let planejamento of planejamentos")
 					td {{planejamento.data}}
 					td {{planejamento.demanda}}
 					td {{planejamento.capacidade}}
 					td {{planejamento.atendimentoPlanejado}}
 					td {{planejamento.atendimentoRealizado}}
 					td {{planejamento.desvio}}
+
+		nav
+			ul.pagination.justify-content-center
+				li.page-item
+					a.page-link()
+						span(aria-hidden='true') «
+						span.sr-only Previous
+				li.page-item
+					a.page-link 1
+				li.page-item
+					a.page-link 2
+				li.page-item
+					a.page-link 3
+				li.page-item
+					a.page-link
+						span(aria-hidden='true') »
+						span.sr-only Next
+
 

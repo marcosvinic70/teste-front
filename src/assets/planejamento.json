@@ -1,0 +1,43 @@
+[
+	{
+		"data": "12/04/1995",
+		"demanda": 30,
+		"capacidade": 25,
+		"atendimentoPlanejado": 20,
+		"atendimentoRealizado": 18,
+		"desvio": 2
+	},
+	{
+		"data": "13/10/1996",
+		"demanda": 35,
+		"capacidade": 40,
+		"atendimentoPlanejado": 30,
+		"atendimentoRealizado": 25,
+		"desvio": 5
+	},
+	{
+		"data": "30/05/1998",
+		"demanda": 40,
+		"capacidade": 36,
+		"atendimentoPlanejado": 36,
+		"atendimentoRealizado": 35,
+		"desvio": 1
+	},
+	{
+		"data": "11/08/2000",
+		"demanda": 30,
+		"capacidade": 25,
+		"atendimentoPlanejado": 20,
+		"atendimentoRealizado": 18,
+		"desvio": 2
+	},
+	{
+		"data": "01/12/2001",
+		"demanda": 10,
+		"capacidade": 30,
+		"atendimentoPlanejado": 30,
+		"atendimentoRealizado": 10,
+		"desvio": 20
+	}
+
+]

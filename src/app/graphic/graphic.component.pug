@@ -3,37 +3,26 @@
 	.card-body
 		highcharts-chart([Highcharts]="Highcharts",
 			[options]="chartOptions",
-			style="width: 100%; height: 400px; display: block;")
+			style="width: 100%; height: 600px; display: block;",
+			*ngIf="canLoad")
 
-		//- jqxChart([width]="1400", [height]="800",
-		//- 		[title]="'Fitness & exercise weekly scorecard'",
-		//- 		[description]="'Time spent in vigorous exercise'",
-		//- 		[showLegend]="true", [enableAnimations]="true", [padding]="padding",
-		//- 		[titlePadding]="titlePadding", [source]="sampleData", [xAxis]="xAxis",
-		//- 		[seriesGroups]="seriesGroups", [colorScheme]="'scheme01'")
 .card.mt-5
 	.card-body
-		table.table.table-hover.table-striped
+		table.table.table-hover.table-striped#datatable
 			thead
 				tr
-					th(scope='col') #
-					th(scope='col') First
-					th(scope='col') Last
-					th(scope='col') Handle
+					th Data
+					th Demanda
+					th Capacidade
+					th Atendimento planejado
+					th Atendimento realizado
+					th Desvio
 			tbody
-				tr
-					th(scope='row') 1
-					td Mark
-					td Otto
-					td @mdo
-				tr
-					th(scope='row') 2
-					td Jacob
-					td Thornton
-					td @fat
-				tr
-					th(scope='row') 3
-					td Larry
-					td the Bird
-					td @twitter
+				tr(*ngFor="let planejamento of planejamentos")
+					td {{planejamento.data}}
+					td {{planejamento.demanda}}
+					td {{planejamento.capacidade}}
+					td {{planejamento.atendimentoPlanejado}}
+					td {{planejamento.atendimentoRealizado}}
+					td {{planejamento.desvio}}
 

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
+import { GraphicService } from './graphic.component.service';
+import { Planejamento } from '../models/planejamento.model';
 
 @Component({
 	selector: 'app-graphic',
@@ -9,59 +11,75 @@ import * as Highcharts from 'highcharts';
 export class GraphicComponent implements OnInit {
 
 	Highcharts = Highcharts;
-	chartOptions = {
-		series: [{
-		data: [1, 2, 3]
-		}]
-	};
+	chartOptions: any;
+	canLoad: boolean = false;
+	planejamentos: Planejamento[];
 
-	sampleData: any[] = [
-		{ Day: 'Monday', Keith: 30, Erica: 15, George: 25 },
-		{ Day: 'Tuesday', Keith: 25, Erica: 25, George: 30 },
-		{ Day: 'Wednesday', Keith: 30, Erica: 20, George: 25 },
-		{ Day: 'Thursday', Keith: 35, Erica: 25, George: 45 },
-		{ Day: 'Friday', Keith: 20, Erica: 20, George: 25 },
-		{ Day: 'Saturday', Keith: 30, Erica: 20, George: 30 },
-		{ Day: 'Sunday', Keith: 60, Erica: 45, George: 90 }
-	];
+	constructor(private graphicService: GraphicService) {
 
-	padding: any = { left: 5, top: 5, right: 5, bottom: 5 };
+		this.findPlanejamentos();
 
-	titlePadding: any = { left: 90, top: 0, right: 0, bottom: 10 };
+	}
 
-	xAxis: any =
-	{
-		dataField: 'Day',
-		showGridLines: true
-	};
+	ngOnInit() { }
 
-	seriesGroups: any[] =
-	[
-		{
-			type: 'column',
-			columnsGapPercent: 50,
-			seriesGapPercent: 0,
-			valueAxis:
-			{
-				unitInterval: 10,
-				minValue: 0,
-				maxValue: 100,
-				displayValueAxis: true,
-				description: 'Time in minutes',
-				axisSize: 'auto',
-				tickMarksColor: '#888888'
-			},
+	findPlanejamentos() {
+
+		this.graphicService.getData()
+			.subscribe((planejamentos: Planejamento[]) => {
+
+				this.planejamentos = planejamentos;
+
+				this.buildChartOptions(planejamentos);
+
+		});
+
+	}
+
+	buildChartOptions(planejamentos: Planejamento[]) {
+
+		this.chartOptions = {
 			series: [
-				{ dataField: 'Keith', displayText: 'Keith' },
-				{ dataField: 'Erica', displayText: 'Erica' },
-				{ dataField: 'George', displayText: 'George' }
-			]
+				{
+					name: 'Datas',
+					colorByPoint: true,
+					data: this.getDatas(planejamentos)
+				}
+			],
+			chart: {
+				type: 'column'
+			},
+			title: {
+				text: 'Planejamento de atendimentos'
+			},
+			yAxis: {
+				allowDecimals: false,
+				title: {
+					text: 'Capacidade - Atendimento Realizado'
+				}
+			},
+			xAxis: {
+				type: 'category',
+				title: {
+					text: 'Datas'
+				}
+			},
+			tooltip: {
+				valueSuffix:" (Capacidade - Atendimento Realizado)"
+			}
 		}
-	];
 
-	constructor() { }
+		this.canLoad = true;
 
-	ngOnInit() {
+	}
+
+	getDatas(planejamentos: Planejamento[]) {
+
+		return planejamentos.map((planejamento) => {
+
+			return {name: planejamento.data, y: planejamento.capacidade - planejamento.atendimentoRealizado}
+
+		});
 
 	}
 

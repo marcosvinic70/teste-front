@@ -1,4 +1,4 @@
-$baseColor: #5a718b;
+$baseColor: #304256;
 $baseHoverColor: #dddddd;
 
 #sidebar {
@@ -19,7 +19,7 @@ $baseHoverColor: #dddddd;
 	margin-left: -250px;
 }
 #sidebar .sidebar-header {
-	padding: 3px;
+	padding-top: 15px;
 	background: $baseColor;
 }
 
@@ -69,18 +69,25 @@ a:focus {
 }
 
 a[data-toggle="collapse"] {
-    position: relative;
+	position: relative;
 }
 
 .dropdown-toggle::after {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
+	display: block;
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	transform: translateY(-50%);
 }
 
 img {
-	width: 100%;
-	height: 200px;
+	width: 80%;
+	height: 180px;
+	border-radius: 20px;
+}
+
+#sysname {
+
+	padding: 10px;
+
 }

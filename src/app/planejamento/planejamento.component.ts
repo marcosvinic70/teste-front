@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
-import { GraphicService } from './graphic.component.service';
+import { PlanejamentoService } from './planejamento.component.service';
 import { Planejamento } from '../models/planejamento.model';
 
 @Component({
-	selector: 'app-graphic',
-	templateUrl: './graphic.component.pug',
-	styleUrls: ['./graphic.component.scss']
+	selector: 'app-planejamento',
+	templateUrl: './planejamento.component.pug',
+	styleUrls: ['./planejamento.component.scss']
 })
-export class GraphicComponent implements OnInit {
+export class PlanejamentoComponent implements OnInit {
 
 	Highcharts = Highcharts;
 	chartOptions: any;
 	canLoad: boolean = false;
 	planejamentos: Planejamento[];
 
-	constructor(private graphicService: GraphicService) {
+	constructor(private planejamentoService: PlanejamentoService) {
 
 		this.findPlanejamentos();
 
@@ -25,7 +25,7 @@ export class GraphicComponent implements OnInit {
 
 	findPlanejamentos() {
 
-		this.graphicService.getData()
+		this.planejamentoService.getData()
 			.subscribe((planejamentos: Planejamento[]) => {
 
 				this.planejamentos = planejamentos;

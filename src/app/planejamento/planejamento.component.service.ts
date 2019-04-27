@@ -2,10 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { routes } from '../utils/routes';
-import { Planejamento } from '../models/planejamento.model';
 
 @Injectable()
-export class GraphicService {
+export class PlanejamentoService {
 
 	data: any;
 

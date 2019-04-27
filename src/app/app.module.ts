@@ -5,18 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
-import { GraphicComponent } from './graphic/graphic.component';
-import { jqxChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxchart';
 import { HighchartsChartModule } from 'highcharts-angular';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { GraphicService } from './graphic/graphic.component.service';
+import { HttpClientModule } from '@angular/common/http';
+import { PlanejamentoComponent } from './planejamento/planejamento.component';
+import { PlanejamentoService } from './planejamento/planejamento.component.service';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		HeaderComponent,
 		SideNavComponent,
-		GraphicComponent
+		PlanejamentoComponent
 	],
 	imports: [
 		BrowserModule,
@@ -24,7 +23,7 @@ import { GraphicService } from './graphic/graphic.component.service';
 		HighchartsChartModule,
 		HttpClientModule
 	],
-	providers: [GraphicService],
+	providers: [PlanejamentoService],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }
